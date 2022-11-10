@@ -30,7 +30,7 @@ How to run server
  
  
 ## Extra 
- JWT auth token is set in localStorage with key 'access_token'
- For SeachPage API calls Headers are set by interceptor as {authorization: authToken} 
- Router module stores routes for SPA
+ - JWT auth token is set in localStorage with key 'access_token'
+ - For SeachPage API calls Headers are set by interceptor as {authorization: authToken} 
+ - Router module stores routes for SPA
  
