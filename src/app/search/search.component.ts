@@ -9,14 +9,15 @@ import { AuthService } from '../authService/auth.service';
 })
 export class SearchComponent implements OnInit {
   currentUser:Object ={}
+  isLogged = false
   constructor(
     public authService:AuthService,
   ) { 
   }
 
   ngOnInit(): void {
-    const res = this.authService.getToken()
-    console.log(res)
+    this.isLogged = this.authService.isLoggedIn;
+    console.log(this.isLogged)
   }
 
 }

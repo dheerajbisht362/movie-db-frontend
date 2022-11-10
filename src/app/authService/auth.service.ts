@@ -26,6 +26,7 @@ export class AuthService {
       .subscribe((res: any) => {
         localStorage.setItem('access_token', res.token);
           this.router.navigate(['search/']);
+          this._snackBar.open("Logged in success","X");
       })
   }
   getToken() {
@@ -55,6 +56,7 @@ export class AuthService {
       msg = `Error: ${error.status}\nMessage: ${error.message}`;
       this._snackBar.open(msg,"X");
     }
-    return throwError(msg);
+    const err = new Error(msg); 
+    return throwError(() => err);
   }
 }

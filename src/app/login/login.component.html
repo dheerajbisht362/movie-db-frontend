@@ -1,4 +1,4 @@
-<div class="form-body">
+<div *ngIf="!isLogged" class="form-body">
 <form class="login-form" #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
     <div class="login-full-width" appearance="fill">
         <label for="name" >Name</label>
@@ -19,5 +19,7 @@
         <button mat-button color="primary" [disabled]="!loginForm.valid" type="submit">Submit</button>
     </div>
 </form>
-    
+</div>
+<div *ngIf="isLogged" class="textCenter">
+    You are already Logged in
 </div>

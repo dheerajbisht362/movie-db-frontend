@@ -24,3 +24,9 @@
   .login-full-width {
     width: 150px;
   }
+  .textCenter{
+    justify-content:center;
+    text-align:center;
+    margin-top: 40px;
+    font-size: 20px
+}

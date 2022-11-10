@@ -10,6 +10,7 @@ import { AuthService } from '../authService/auth.service';
 
 export class LoginComponent implements OnInit {
 
+  isLogged = false
   constructor(private authService:AuthService) {}
   
   onSubmit(loginForm: any) {
@@ -18,6 +19,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.isLogged = this.authService.isLoggedIn
   }
 
 }
