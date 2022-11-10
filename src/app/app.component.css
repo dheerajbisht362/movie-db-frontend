@@ -1,0 +1,13 @@
+.toolbar{
+    display:flex;
+    justify-content:space-around;
+    border:2px solid;
+    box-shadow: 5px 10px #888888;
+    text-align: centre;
+}
+
+.toolbar > div{
+    margin:20px;
+    font-size:20px;
+    font-weight:600px;
+}

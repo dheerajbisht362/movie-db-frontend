@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from "@angular/forms";
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-login',
@@ -8,14 +9,14 @@ import {FormControl, Validators} from "@angular/forms";
 })
 
 export class LoginComponent implements OnInit {
- 
-  constructor() {}
+
+  constructor(private apiService:ApiService) {}
   
   onSubmit(loginForm: any) {
-    const control = new FormControl('1', Validators.pattern('^[0-9a-zA-Z]+$'));
-    console.log(control.errors);
     console.log(loginForm.value);
-    //pasword length should be 8-16
+    this.apiService.login(loginForm.value).subscribe(res=>{
+      console.log(res)
+    })
   }
 
   ngOnInit(): void {

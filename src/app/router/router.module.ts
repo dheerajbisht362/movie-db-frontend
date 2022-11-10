@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
 import { LoginComponent } from '../login/login.component';
 import { SearchComponent } from '../search/search.component';
-import { FormsModule } from '@angular/forms';
+import { MatFormFieldModule } from "@angular/material/form-field";
 
 
 const routes:Routes = [
@@ -17,7 +17,7 @@ const routes:Routes = [
 @NgModule({
   declarations: [],
   imports: [
-    RouterModule.forRoot(routes),FormsModule
+    RouterModule.forRoot(routes),MatFormFieldModule 
   ],
   exports:[RouterModule]
 })
