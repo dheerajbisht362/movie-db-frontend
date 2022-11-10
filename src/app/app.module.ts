@@ -9,11 +9,12 @@ import { SearchComponent } from './search/search.component';
 import { AppRouterModule } from './router/router.module';
 import { FormsModule } from '@angular/forms';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import {MatButtonModule} from "@angular/material/button"
+import { AuthInterceptor } from './authService/authInterceptor';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,13 @@ import {MatButtonModule} from "@angular/material/button"
   ],
   imports: [BrowserModule, HttpClientModule, AppRouterModule, FormsModule, NoopAnimationsModule, MatSnackBarModule, 
     MatInputModule,MatFormFieldModule, MatButtonModule],
-  providers: [],
+  providers: [
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass:AuthInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

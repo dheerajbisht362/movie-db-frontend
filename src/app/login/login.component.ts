@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators} from "@angular/forms";
-import { ApiService } from '../api.service';
+import { AuthService } from '../authService/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,13 +10,11 @@ import { ApiService } from '../api.service';
 
 export class LoginComponent implements OnInit {
 
-  constructor(private apiService:ApiService) {}
+  constructor(private authService:AuthService) {}
   
   onSubmit(loginForm: any) {
     console.log(loginForm.value);
-    this.apiService.login(loginForm.value).subscribe(res=>{
-      console.log(res)
-    })
+    this.authService.signIn(loginForm.value)
   }
 
   ngOnInit(): void {

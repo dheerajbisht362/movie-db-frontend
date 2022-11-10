@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { AuthService } from '../authService/auth.service';
 
 @Component({
   selector: 'app-search',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-
-  constructor() { }
+  currentUser:Object ={}
+  constructor(
+    public authService:AuthService,
+  ) { 
+  }
 
   ngOnInit(): void {
+    const res = this.authService.getToken()
+    console.log(res)
   }
 
 }
