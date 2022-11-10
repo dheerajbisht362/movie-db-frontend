@@ -20,6 +20,9 @@ How to run server
       - Route /login 
       - When not logged in
       - Password - 8-16 char alphanumeric characters
+      - Login Credentials
+        - Email dheerajbisht362@gmail.com
+        - Password 12345678
  - Search for movies 
       - Route /search
       - Enabled after login
