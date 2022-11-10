@@ -9,7 +9,7 @@ import { catchError, throwError } from 'rxjs';
 })
 export class ApiService {
 
-  baseUrl: string = "http://localhost:3000"
+  baseUrl: string = "https://enigmatic-mountain-70088.herokuapp.com"
 
   constructor(private httpClient: HttpClient, private _snackBar: MatSnackBar) { }
 

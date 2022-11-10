@@ -13,7 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   providedIn: 'root',
 })
 export class AuthService {
-  endpoint: string = 'http://localhost:3000';
+  endpoint: string = 'https://enigmatic-mountain-70088.herokuapp.com';
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser = {};
  
