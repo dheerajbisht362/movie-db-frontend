@@ -1,4 +1,30 @@
-<p  class="textCenter" *ngIf="!isLogged">Please Login First</p>
-<p  class="textCenter" *ngIf="isLogged">
-    
+<p class="textCenter" *ngIf="!isLogged; else loggedin">
+    Please Login First
 </p>
+<ng-template #loggedin>
+    <form  #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm)">
+        <div class="movieForm">
+            <div>
+                Search Movie and TV Show available
+            </div>
+            <div appearance="fill">
+                <label  for="search" >Search</label>
+                <input  type="text" id="search" ngModel name="search" required>
+            </div>
+            <div appearance="fill">
+                <button  mat-raised-button color="primary" type="submit">Submit</button>
+            </div>
+        </div> 
+    </form>
+
+    <div class="card-container">
+        <mat-card *ngFor='let movie of movies' class="matcard" style="width: 400px">
+            <mat-card-title>{{movie.show.name}}</mat-card-title>
+            <mat-card-subtitle>{{movie.show.name}}</mat-card-subtitle>
+            <mat-card-content [innerHTML]="movie.show.summary"></mat-card-content>
+            <img mat-card-image width="400px" src={{movie.show.image?.medium}} alt="Not-Avaliable" />
+            <mat-card-actions>{{movie.show.officialSite}}</mat-card-actions>
+            <mat-card-footer>{{movie.show.language}}</mat-card-footer>
+        </mat-card>
+    </div>
+</ng-template>

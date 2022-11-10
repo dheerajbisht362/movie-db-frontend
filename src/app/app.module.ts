@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import {MatButtonModule} from "@angular/material/button"
 import { AuthInterceptor } from './authService/authInterceptor';
+import {MatCardModule} from "@angular/material/card"
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { AuthInterceptor } from './authService/authInterceptor';
     SearchComponent
   ],
   imports: [BrowserModule, HttpClientModule, AppRouterModule, FormsModule, NoopAnimationsModule, MatSnackBarModule, 
-    MatInputModule,MatFormFieldModule, MatButtonModule],
+    MatInputModule,MatFormFieldModule, MatButtonModule,MatCardModule],
   providers: [
     {
       provide : HTTP_INTERCEPTORS,

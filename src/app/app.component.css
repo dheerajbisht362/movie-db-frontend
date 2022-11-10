@@ -1,3 +1,9 @@
+*{
+    margin:0px;
+    paddding:0px;
+    box-sizing:border-box
+}
+
 .toolbar{
     display:flex;
     justify-content:space-around;
