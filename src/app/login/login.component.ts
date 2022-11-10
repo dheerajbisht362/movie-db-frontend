@@ -22,4 +22,8 @@ export class LoginComponent implements OnInit {
     this.isLogged = this.authService.isLoggedIn
   }
 
+  logout(){
+    this.authService.doLogout();
+    this.isLogged = false;
+  }
 }

@@ -26,7 +26,7 @@ export class AuthService {
       .subscribe((res: any) => {
         localStorage.setItem('access_token', res.token);
           this.router.navigate(['search/']);
-          this._snackBar.open("Logged in success","X");
+          this._snackBar.open("LogIn success","X");
       })
   }
   getToken() {
@@ -39,7 +39,8 @@ export class AuthService {
   doLogout() {
     let removeToken = localStorage.removeItem('access_token');
     if (removeToken == null) {
-      this.router.navigate(['log-in']);
+      this._snackBar.open("Logged Out","X");
+      this.router.navigate(['login']);
     }
   }
   // Error
